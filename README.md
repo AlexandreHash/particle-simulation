@@ -1,5 +1,5 @@
 # particle-simulation
-Motion simulation of different materials.
+Simulation of the motion of particles across various materials with different properties.
 
 <p align="center">
   <img src="https://github.com/AlexandreAero/particle-simulation-cpp/assets/66020831/423f1891-3521-4a0d-8a6f-264e16b4664b" width="738px" />

@@ -1,9 +1,3 @@
-/*************************************************************\
- * Pilot Alex, 2022-2024, All right reserved. Copyright (c). *
- * Made by A.G.                                              *
- * C++ 14, Visual Studio 2022.                               *
-\*************************************************************/
-
 #include <cmath>
 #include <string>
 #include <random>

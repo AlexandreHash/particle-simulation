@@ -1,8 +1,8 @@
-/****************************************************************************\
- * Pilot Alex, 2022-2024, All right reserved. Copyright (c).                *
- * Made by A.G. under the username of Pilot Alex.                           *
- * C++14, Visual Studio 2022.                                               *
-\****************************************************************************/
+/*************************************************************\
+ * Pilot Alex, 2022-2024, All right reserved. Copyright (c). *
+ * Made by A.G.                                              *
+ * C++ 14, Visual Studio 2022.                               *
+\*************************************************************/
 
 #include <cmath>
 #include <string>
@@ -65,10 +65,7 @@ struct Particle
 
     Particle() = delete;
     Particle(const SpreadRules& spreadRules)
-        : lifeTime(-1.0f)
-        , hasBeenUpdatedThisFrame(false)
-        , spreadRules(spreadRules)
-        , materialType(MaterialType::None)
+        : lifeTime(-1.0f), hasBeenUpdatedThisFrame(false), spreadRules(spreadRules), materialType(MaterialType::None)
     {
     }
 };
@@ -191,12 +188,7 @@ bool InitSDL(SDL_Window*& window, SDL_Renderer*& renderer)
         return false;
     }
 
-    window = SDL_CreateWindow("Particle simulation",
-                               SDL_WINDOWPOS_UNDEFINED,
-                               SDL_WINDOWPOS_UNDEFINED,
-                               WINDOW_WIDTH,
-                               WINDOW_HEIGHT,
-                               SDL_WINDOW_SHOWN);
+    window = SDL_CreateWindow("Particle simulation", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
 
     if (!window)
     {
@@ -227,8 +219,7 @@ bool InitImGui(SDL_Window* window, SDL_Renderer* renderer)
     (void)io;
     ImGui::StyleColorsDark();
 
-    if (!ImGui_ImplSDL2_InitForSDLRenderer(window, renderer) ||
-        !ImGui_ImplSDLRenderer2_Init(renderer))
+    if (!ImGui_ImplSDL2_InitForSDLRenderer(window, renderer) || !ImGui_ImplSDLRenderer2_Init(renderer))
     {
         std::cout << "Error on ImGui SDL renderer init!" << std::endl;
         return false;
@@ -274,6 +265,7 @@ Particle* GetParticleAt(Grid& cells, int gridWidth, int x, int y)
     {
         return &cells[index];
     }
+    
     return nullptr;
 }
 
@@ -469,6 +461,7 @@ void UpdateInputs(const SDL_Event& event, const ImGuiIO& io, Grid& cells, int gr
             RevealParticlesAt(cells, gridWidth, bounds);
             break;
         }
+            
         default:
             break;
         }
